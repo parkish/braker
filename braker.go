@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"errors"
 	"flag"
 	"fmt"
 	"log"
@@ -12,7 +13,6 @@ import (
 	"strconv"
 	"strings"
 	"sync"
-    "errors"
 )
 
 var extractTitleRegexp *regexp.Regexp = regexp.MustCompile(`^.+?title\s+(\d+)\:`)
@@ -126,11 +126,11 @@ extract:
 			break extract
 		}
 	}
-    
-    if finalError.Len() > 0 {
-        return errors.New(finalError.String())
-    }
-        
+
+	if finalError.Len() > 0 {
+		return errors.New(finalError.String())
+	}
+
 	return nil
 }
 
