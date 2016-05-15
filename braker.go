@@ -70,6 +70,8 @@ func parseTrackInfo(output string) ([]Track, error) {
 
 func extractTracks(dvdPath string, handbrakePath string, handbrakePreset string, tracks []Track) error {
 	errorChan := make(chan error, len(tracks))
+	defer close(errorChan)
+	
 	wg := &sync.WaitGroup{}
 
 	for _, track := range tracks {
