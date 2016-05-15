@@ -1,0 +1,14 @@
++ title 2:
+any other junk is ignored
+  + duration: 00:01:48
+  seriously
++ title 4:
+nobody cares about this text
+  + duration: 00:26:25
+  or this text...
++ title 5:
+  + duration: 00:26:25
++ title 6:
+  + duration: 00:26:26
++ title 7:
+  + duration: 00:26:26
